@@ -1,0 +1,204 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ================================
+   THEME TOKENS – NEW LIFE MBASS
+================================ */
+@theme {
+  --font-poppins: "sans-serif";
+
+  /* Core brand colors (from logo) */
+  --color-faith-orange: #fb6c08;
+  --color-life-green: #3b9c3c;
+  --color-nations-blue: #1e4fd8;
+  --color-spirit-indigo: #4b3fa6;
+
+  /* Text */
+  --color-text-dark: #151515;
+  --color-text-muted: #52525b;
+  --color-text-light: #ababab;
+
+  /* Backgrounds */
+  --color-bg-light: #f8fafc;
+  --color-bg-soft: #f1f3f8;
+  --color-bg-card: #ffffff;
+
+  /* Borders & UI */
+  --color-border-light: #e5e7eb;
+  --color-ring-light: #c7d2fe;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+}
+
+/* Inline theme mapping (shadcn compatibility) */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* ================================
+   LIGHT MODE – CHURCH FEEL
+================================ */
+:root {
+  --font-poppins: "Poppins", "sans-serif";
+  --radius: 0.75rem;
+
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.145 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+
+  /* Primary = Nations Blue */
+  --primary: oklch(0.55 0.18 260);
+  --primary-foreground: oklch(0.985 0 0);
+
+  /* Secondary = Life Green */
+  --secondary: oklch(0.87 0.12 150);
+  --secondary-foreground: oklch(0.205 0 0);
+
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  /* Accent = Faith Orange */
+  --accent: oklch(0.85 0.18 45);
+  --accent-foreground: oklch(0.145 0 0);
+
+  --destructive: oklch(0.62 0.24 27);
+
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.65 0.16 260);
+
+  /* Sidebar (church admin friendly) */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.96 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+/* ================================
+   DARK MODE – REVERENT & CALM
+================================ */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+
+  --primary: oklch(0.72 0.17 260);
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.32 0.08 150);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.65 0.2 45);
+  --accent-foreground: oklch(0.985 0 0);
+
+  --destructive: oklch(0.704 0.191 22);
+
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+}
+
+/* ================================
+   BASE LAYER
+================================ */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-poppins);
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-semibold tracking-tight;
+  }
+
+  p {
+    @apply text-muted-foreground leading-relaxed;
+  }
+
+  .hoverEffect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  button {
+    @apply hover:cursor-pointer;
+  }
+}
+
+/* ================================
+   UTILITIES
+================================ */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.text-brand-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--color-faith-orange),
+    var(--color-life-green),
+    var(--color-nations-blue)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(
+    120deg,
+    var(--color-faith-orange),
+    var(--color-life-green),
+    var(--color-nations-blue),
+    var(--color-spirit-indigo)
+  );
+}

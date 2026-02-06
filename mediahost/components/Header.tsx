@@ -16,7 +16,7 @@ const Header = () => {
   // const { user } = useUser();
 
   return (
-    <header className="backdrop-blur-md py-5 sticky top-0 z-50 bg-white/80 border-b border-b-black/20">
+    <header className="backdrop-blur-md py-5 sticky top-0 z-50 bg-white/10 border-b border-b-black/20">
       <Container className="flex items-center justify-between text-lightColor">
         <div className="w-auto md:w-1/5 flex items-center gap-2.5 justify-start md:gap-0">
           <MobileMenu />

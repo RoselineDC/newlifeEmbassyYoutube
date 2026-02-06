@@ -2,6 +2,7 @@ import './globals.css';
 
 import Container from "@/components/Container";
 import HomeBanner from "@/components/HomeBanner";
+import SundayService from '@/components/SundayService';
 
 
 
@@ -11,8 +12,9 @@ const Home = async () => {
   // const categories = await getCategories(6);
 
   return (
-    <Container className="bg-shop-light-pink">
+    <Container className="">
       <HomeBanner />
+      <SundayService />
       
     
     </Container>

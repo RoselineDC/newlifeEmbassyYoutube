@@ -11,7 +11,7 @@ function Logo({className}: {className?: string}) {
         "text-2xl text-faith-orange/90 font-black tracking-wider  uppercase hover:text-shop-light-blue hoverEffect group font-poppins ", className
         )}>new  
         <span
-        className='text-spirit-indigo group-hover:text-shop-btn-dark-blue hoverEffect'
+        className='text-white group-hover:text-shop-btn-dark-blue hoverEffect'
         > life </span>
         EMBASSY
     </h2>

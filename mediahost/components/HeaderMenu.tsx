@@ -15,14 +15,14 @@ function HeaderMenu() {
   
   return (
     <div 
-    className='hidden md:inline-flex w-fit items-center justify-between gap-7 text-sm capitalized  text-light font-normal'
+    className='hidden md:inline-flex w-fit items-center justify-between gap-7 text-sm capitalized text-white font-normal'
     >
       {headerData?.map((item) => (
         <Link key={item?.title}
         href={item?.href}
         className= {`
           hover:text-life-green hoverEffect relative group
-          ${pathname === item?.href  && "text-life-green"}
+          ${pathname === item?.href  && "text-faith-orange"}
           
           `}
         >

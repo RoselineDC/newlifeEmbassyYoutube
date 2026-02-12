@@ -12,7 +12,7 @@ const Home = async () => {
   // const categories = await getCategories(6);
 
   return (
-    <Container className="">
+    <Container className=" ">
       <HomeBanner />
       <SundayService />
       

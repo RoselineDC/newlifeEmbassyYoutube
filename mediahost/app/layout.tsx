@@ -4,7 +4,7 @@ import  { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-import { ClerkProvider } from "@clerk/nextjs";
+// import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-poppins antialiased">
-        <ClerkProvider>
+        {/* <ClerkProvider> */}
           <div className="flex flex-col min-h-screen">
             <Header />
         
@@ -42,7 +42,7 @@ export default function RootLayout({
               },
             }}
           />
-        </ClerkProvider>
+        {/* </ClerkProvider> */}
       </body>
     </html>
   );

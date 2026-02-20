@@ -8,7 +8,7 @@ const MobileMenu = () => {
   return (
     <>
     <button onClick={ () => setIsSidebarOpen(!isSidebarOpen)}>
-        <AlignLeft className='hover:text-dark hoverEffect md:hidden hover:cursor-pointer md:gap-0' />
+        <AlignLeft className=' text-white hover:text-faith-orange hoverEffect md:hidden hover:cursor-pointer md:gap-2 m' />
     </button>
     <div className='md:hidden'>
       <SideMenu isOpen={isSidebarOpen}

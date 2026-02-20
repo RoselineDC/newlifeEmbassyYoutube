@@ -3,8 +3,9 @@ import { Search } from 'lucide-react'
 
 function SearchBar() {
   return <div>
-    <Search 
-     className='w-5 h-5 text-white  hover:text-faith-orange hoverEffect'
+    <Search size={29}
+     className='text-white text-4xl hover:text-faith-orange hoverEffect'
+     
     />
 
   </div>

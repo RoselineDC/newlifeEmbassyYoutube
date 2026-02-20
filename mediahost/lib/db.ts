@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
 
+const dns = require("dns");
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
 const MONGODB_URL = process.env.MONGODB_URL!;
+console.log("MONGODB_URL", MONGODB_URL)
 // CONNECT TO MONGODB
 let cached = global.mongoose;
 if (!cached) {
@@ -17,12 +21,19 @@ async function connectToMongoDB() {
             bufferCommands: true,
             maxPoolSize: 10,
         })
-        .then(() => {
-            cached.conn = mongoose.connection;
-            return cached.conn;
-        });
+        .then(() => mongoose.connection);          
+      
     }
+    try { 
+        cached.conn = await cached.promise
+    } catch(error) {
+        cached.promise = null;
+        throw error
+    }
+    return cached.conn
+
 }
+export { connectToMongoDB}
 
     
 

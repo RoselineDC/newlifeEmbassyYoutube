@@ -15,7 +15,7 @@ function HeaderMenu() {
   
   return (
     <div 
-    className='hidden md:inline-flex w-fit items-center justify-between gap-7 text-sm capitalized text-white font-normal'
+    className='hidden md:inline-flex w-fit items-center justify-between gap-15 text-m capitalized text-white font-normal'
     >
       {headerData?.map((item) => (
         <Link key={item?.title}

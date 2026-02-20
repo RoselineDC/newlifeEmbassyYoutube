@@ -15,7 +15,7 @@ const SignUpIcon = () => {
         className="flex items-center text-white gap-3 group p-4 transition-colors hover:text-faith-orange cursor-pointer"
         onClick={openModal}
       >
-        <UserLock />
+        <UserLock size={29} />
       </div>
 
       <SignUpModal isOpen={isOpen} onClose={closeModal} />

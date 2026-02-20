@@ -8,6 +8,8 @@ import { IoLogoApple } from "react-icons/io5";
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { X } from 'lucide-react';
+import { toast } from 'sonner';
+import axios from 'axios';
 
 interface SignUpModalProps {
   isOpen: boolean
@@ -20,8 +22,22 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleSignIn = () => {
-    // Add your sign-up logic here
+  const handleSignUp = async () => {
+    if(!name || !phone || !email || !password) {
+      toast.error("Please fill in all fields")
+      return
+    }
+    try {
+      await axios.post("/api/register", {
+        name,
+        phone,
+        email,
+        password
+      })
+
+    } catch (error) {
+      toast.error("Unable to add Your account. Please Contact Support.")
+    }
   }
 
   if (!isOpen) return null
@@ -70,7 +86,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({ isOpen, onClose }) => {
         />
         <Button 
           className="bg-faith-orange text-black px-2 mt-5 hover:bg-faith-orange/50 cursor-pointer w-full text-base py-2.5" 
-          onClick={handleSignIn}
+          onClick={handleSignUp}
         >
           Sign Up
         </Button>

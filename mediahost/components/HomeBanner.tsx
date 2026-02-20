@@ -22,10 +22,10 @@ export default function Header() {
       <div className="flex h-full items-center justify-center text-center px-4">
         <div className="max-w-4xl text-white">
           <h1 className="text-4xl md:text-6xl font-bold">
-            Welcome to New Life Embassy
+            {/* Welcome to New Life Embassy */}
           </h1>
           <p className="mt-4 text-lg md:text-xl">
-            Transforming lives through the Word
+            {/* Transforming lives through the Word */}
           </p>
         </div>
       </div>

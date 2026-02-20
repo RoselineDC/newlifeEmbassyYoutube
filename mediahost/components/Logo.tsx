@@ -5,13 +5,13 @@ import { cn } from '@/lib/utils'
 function Logo({className}: {className?: string}) {
   return <Link
   href={'/'}
-  className='inline-flex'
+  className='inline-flex  '
    >
     <h2 className={cn(
-        "text-2xl text-faith-orange/90 font-black tracking-wider  uppercase hover:text-shop-light-blue hoverEffect group font-poppins ", className
+        "text-xl   text-faith-orange/90 font-black tracking-wider hover:text-life-green hoverEffect group uppercase  font-poppins   ", className
         )}>new  
         <span
-        className='text-white group-hover:text-shop-btn-dark-blue hoverEffect'
+        className='text-white hover:text-life-green hoverEffect group hoverEffect'
         > life </span>
         EMBASSY
     </h2>

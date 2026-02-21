@@ -1,3 +1,3 @@
-import banner1 from './videos/banner.mp4';
+import banner1 from './images/logo.jpg';
 
 export default {banner1}

@@ -2,6 +2,7 @@
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
+@import 'react-phone-number-input/style.css';
 
 /* ================================
    THEME TOKENS – CHURCH BRAND + CHARTS
@@ -253,4 +254,50 @@ body {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Dark theme for react-phone-number-input */
+.PhoneInput {
+  background-color: transparent;
+}
+
+.PhoneInputInput {
+  background-color: transparent !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.PhoneInputInput::placeholder {
+  color: rgb(39, 38, 38); /* gray-400 */
+}
+
+.PhoneInputCountrySelect {
+  background-color: black !important;
+  color: rgb(192, 86, 21) !important;
+  border: none !important;
+  outline: none !important;
+  hover {
+    /* background-color: rgb(15, 15, 14) !important; */
+    color: #f97316 !important;
+  }
+}
+
+.PhoneInputCountrySelectArrow {
+  color: #f97316 !important; /* faith-orange */
+  border-color: #f97316 !important;
+  opacity: 1 !important;
+}
+
+.PhoneInputCountryIcon {
+  box-shadow: none !important;
+  /* background-color: transparent !important; */
+}
+
+/* Dropdown options */
+.PhoneInputCountrySelect option {
+  /* background-color: #1f1f1f !important; */
+  color: white !important;
 }

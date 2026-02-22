@@ -4,7 +4,7 @@ dns.setServers(["1.1.1.1", "8.8.8.8"]);
 import mongoose from 'mongoose';
 
 const MONGODB_URL = process.env.MONGODB_URL!;
-console.log("MONGODB_URL", MONGODB_URL)
+// console.log("MONGODB_URL", MONGODB_URL)
 // CONNECT TO MONGODB
 let cached = global.mongoose;
 if (!cached) {
@@ -20,6 +20,7 @@ async function connectToMongoDB() {
         cached.promise = mongoose.connect(MONGODB_URL,{
             bufferCommands: true,
             maxPoolSize: 10,
+            family: 4,
             
         })
         .then(() => mongoose.connection);          

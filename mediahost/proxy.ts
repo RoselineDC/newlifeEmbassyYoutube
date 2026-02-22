@@ -16,7 +16,7 @@ export default async function middleware(req: NextRequest) {
 
     // Redirect logged-in users away from login/signup pages
     if (token && (pathname === "/login" || pathname === "/signup")) {
-        return NextResponse.redirect(new URL("/school", req.url));
+        return NextResponse.redirect(new URL("/", req.url));
     }
 
     return NextResponse.next();

@@ -9,6 +9,8 @@ import SearchBar from "./SearchBar";
 import FavouriteIcon from "./FavouriteIcon";
 import MobileMenu from "./MobileMenu";
 import SignUpIcon from "./SignUpIcon";
+import AuthProvider from "@/components/AuthProvider";
+import Notification from "./Notification";
 
 // import { SignedIn, SignedOut, UserButton, ClerkLoaded } from "@clerk/nextjs";
 
@@ -27,17 +29,11 @@ const Header = () => {
 
         <div className="w-auto md:w-fit flex items-center justify-end gap-5">
           <SearchBar /> 
+          <Notification />
+          <AuthProvider>
           <SignUpIcon /> 
-
-            {/* <ClerkLoaded> */}
-                <FavouriteIcon />
-        
-          
-          {/* </SignedIn> */}
-
-          {/* <SignedOut> */}
-            {/* <SignIn /> */}
-          {/* </SignedOut> */}
+          </AuthProvider>
+          <FavouriteIcon />
         </div>
       </Container>
     </header>

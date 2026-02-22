@@ -28,7 +28,7 @@ const LoginPage = () => {
         email,
         password,
         redirect: false,
-        callbackUrl: "/"
+        callbackUrl: "/profile"
       });
 
       if (!response?.ok) {
@@ -36,7 +36,7 @@ const LoginPage = () => {
         return;
       }
 
-      router.push(response.url || "/");
+      router.push(response.url || "/profile");
     } catch (error) {
       toast.error("Failed to login.")
     }
@@ -93,8 +93,8 @@ const LoginPage = () => {
         <p className="text-center text-sm text-gray-400">OR</p>
 
         <div className="flex items-center justify-center gap-4">
-          <FcGoogle className="w-8 h-8 cursor-pointer" onClick={() => signIn("google")} />
-          <FaGithub className="w-8 h-8 cursor-pointer"  onClick={() => signIn("github")}/>
+          <FcGoogle className="w-8 h-8 cursor-pointer" onClick={() => signIn("google", { callbackUrl: "/profile" })} />
+          <FaGithub className="w-8 h-8 cursor-pointer"  onClick={() => signIn("github", { callbackUrl: "/profile" })}/>
         </div>
 
         <div className="text-center text-sm">

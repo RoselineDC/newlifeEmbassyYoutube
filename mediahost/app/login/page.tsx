@@ -32,7 +32,8 @@ const LoginPage = () => {
       });
 
       if (!response?.ok) {
-        toast.error(response?.error || "Invalid email or password.")
+        toast.error("Invalid email or password.")
+        console.log(response?.error)
         return;
       }
 

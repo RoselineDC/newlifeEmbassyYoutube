@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { UserLock } from "lucide-react";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem } from "./ui/dropdown-menu";
 
 export default function ProfileDropdown() {
   const { data: session } = useSession();
@@ -56,6 +57,20 @@ export default function ProfileDropdown() {
       </button>
 
       {/* Dropdown */}
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className="text-white cursor-pointer">
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuGroup>
+            <DropdownMenuItem asChild>
+
+            </DropdownMenuItem>
+          </DropdownMenuGroup>
+
+          </DropdownMenuContent>
+      </DropdownMenu>
       
     
     </div>

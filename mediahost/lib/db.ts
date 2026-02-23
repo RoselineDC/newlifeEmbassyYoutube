@@ -19,9 +19,7 @@ async function connectToMongoDB() {
     if (!cached.promise) {
         cached.promise = mongoose.connect(MONGODB_URL,{
             bufferCommands: true,
-            maxPoolSize: 10,
-            family: 4,
-            
+            maxPoolSize: 10,            
         })
         .then(() => mongoose.connection);          
       
